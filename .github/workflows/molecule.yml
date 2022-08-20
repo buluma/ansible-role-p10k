@@ -58,11 +58,31 @@ jobs:
       #   run: sudo ln -s /etc/apparmor.d/usr.sbin.mysqld /etc/apparmor.d/disable/
       # - name: parse apparmor for mysql
       #   run: sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
-      - name: molecule
-        uses: buluma/molecule-action@v5.0.1
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
         with:
-          image: ${{ matrix.config.image }}
-          tag: ${{ matrix.config.tag }}
+          python-version: 3.8
+
+      - name: Install Molecule
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Test Ansible role
+        run: molecule test
+        env:
+          namespace: ${{ env.docker_namepsace }}
+          image: ansible-${{ matrix.image }}
+          packer_version: ${{ matrix.packer_version }}
+
+      - name: Test Ansible role with check_mode enable
+        run: molecule check
+        env:
+          image: ansible-${{ matrix.image }}
+          zsh_plugin: ${{ matrix.terraform_version }}
   test:
     needs:
       - lint
