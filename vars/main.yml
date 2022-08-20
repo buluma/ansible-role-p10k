@@ -20,9 +20,9 @@ p10k_path:
 
 p10k_zshrc_config:
   zsh:
-   regexp: '^source '
-   line: 'source ~/powerlevel10k/powerlevel10k.zsh-theme'
-   zsh_file: ~/.zshrc
+    regexp: '^source '
+    line: 'source ~/powerlevel10k/powerlevel10k.zsh-theme'
+    zsh_file: ~/.zshrc
   ohmyzsh:
     regexp: '^ZSH_THEME='
     line: 'ZSH_THEME="powerlevel10k/powerlevel10k"'
@@ -127,7 +127,7 @@ flow_config:
 
 transient_config:
   'yes': 'always'
-  'no':  'off'
+  'no': 'off'
 
 prompt_style:
   lean:

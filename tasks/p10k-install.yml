@@ -1,7 +1,7 @@
 ---
 # Install powerlevel10k
 - name: ensure dependencies are installed.
-  package:
+  ansible.builtin.package:
     name: "{{ p10k_dependencies }}"
     state: present
   become: true
@@ -16,12 +16,12 @@
   register: zsh_version
 
 - name: powerlevel10k works only with ZSH >= 5.1
-  fail:
+  ansible.builtin.fail:
     msg: "You are using ZSH version {{ zsh_version.stdout }}. The minimum required version for Powerlevel10k is 5.1"
   when: zsh_version.stdout|float < 5.1
 
 - name: install powerlevel10k.
-  git:
+  ansible.builtin.git:
     repo: "{{ p10k_repository_url }}"
     dest: "{{ p10k_path[zsh_plugin] | default('~/powerlevel10k', True) }}"
     depth: '1'
@@ -32,7 +32,7 @@
   with_items: "{{ p10k_users }}"
 
 - name: add powerlevel10k to zsh plugin
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: "{{ p10k_zshrc_config[zsh_plugin]['zsh_file'] }}"
     regexp: "{{ p10k_zshrc_config[zsh_plugin]['regexp'] }}"
     line: "{{ p10k_zshrc_config[zsh_plugin]['line'] }}"
@@ -43,7 +43,7 @@
   with_items: "{{ p10k_users }}"
 
 - name: enable powerlevel10 instant prompt
-  blockinfile:
+  ansible.builtin.blockinfile:
     path: "{{ p10k_zshrc_config[zsh_plugin]['zsh_file'] }}"
     block: |
       if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -54,7 +54,7 @@
     marker_end: "END P10K INSTANT PROMPT"
 
 - name: enable powerlevel10k config file
-  blockinfile:
+  ansible.builtin.blockinfile:
     path: "{{ p10k_zshrc_config[zsh_plugin]['zsh_file'] }}"
     block: |
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

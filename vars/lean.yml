@@ -53,4 +53,4 @@ flow_config:
 
 transient_config:
   'yes': 'always'
-  'no':  'off'
+  'no': 'off'
