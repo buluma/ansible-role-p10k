@@ -1,6 +1,6 @@
 # [p10k](#p10k)
 
-Ansible role for install powerlevel10k
+Ansible role for installing powerlevel10k
 
 |GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
 |------|------|-------|---------|-------|------|-------------|
@@ -128,7 +128,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 |fedora|all|
 |debian|all|
 |ubuntu|all|
-|amazon|all|
 |opensuse|all|
 |archlinux|all|
 |macosx|all|
@@ -153,4 +152,4 @@ Apache-2.0
 
 ## [Author Information](#author-information)
 
-[diodonfrost](https://buluma.github.io/)
+[buluma](https://buluma.github.io/)

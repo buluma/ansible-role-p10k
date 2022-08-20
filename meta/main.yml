@@ -19,9 +19,6 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
-    - name: Amazon
-      versions:
-        - all
     - name: opensuse
       versions:
         - all
