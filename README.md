@@ -4,7 +4,7 @@ Ansible role for installing powerlevel10k
 
 |GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
 |------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-p10k/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-p10k/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-p10k/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-p10k)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/buluma/p10k)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/p10k)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/pulls/)|
+|[![github](https://github.com/buluma/ansible-role-p10k/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-p10k/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-p10k/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-p10k)|[![quality](https://img.shields.io/ansible/quality/60075)](https://galaxy.ansible.com/buluma/p10k)|[![downloads](https://img.shields.io/ansible/role/d/60075)](https://galaxy.ansible.com/buluma/p10k)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -15,7 +15,7 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
   hosts: all
   tasks:
     - name: "Include buluma.p10k"
-      include_role:
+      ansible.builtin.include_role:
         name: "buluma.p10k"
       vars:
         zsh_plugin: "{{ lookup('env', 'zsh_plugin') | default('zsh', True) }}"
@@ -29,7 +29,7 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
   hosts: all
   tasks:
     - name: Ubuntu/Debian | refresh apt repository
-      apt:
+      ansible.builtin.apt:
         update_cache: yes
       when: ansible_pkg_mgr == "apt"
 ```
@@ -129,8 +129,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 |debian|all|
 |ubuntu|all|
 |opensuse|all|
-|archlinux|all|
-|macosx|all|
 
 The minimum version of Ansible required is 2.8, tests have been done to:
 

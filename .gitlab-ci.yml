@@ -71,7 +71,3 @@ testing:
         tag: "bionic"
       - image: "docker-opensuse-systemd"
         tag: "latest"
-      - image: "archlinux"
-        tag: "latest"
-      - image: "macos-docker"
-        tag: "latest"
