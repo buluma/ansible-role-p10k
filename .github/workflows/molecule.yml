@@ -12,7 +12,7 @@ jobs:
     name: ${{ matrix.image }} zsh_plugin ${{ matrix.zsh_plugin }}
     runs-on: ubuntu-20.04
     env:
-      docker_namepsace: ghcr.io/diodonfrost/docker-ansible
+      docker_namepsace: ghcr.io/buluma/docker-ansible
     strategy:
       fail-fast: false
       matrix:
