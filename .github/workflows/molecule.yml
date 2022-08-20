@@ -38,9 +38,7 @@ jobs:
   macOS_test:
     needs:
       - lint
-    runs-on:
-      - macos-12
-      - macos-latest
+    runs-on: macos-latest
     strategy:
       fail-fast: false
       matrix:
