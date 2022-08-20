@@ -45,7 +45,9 @@ jobs:
         config:
           - image: "rancher/dind"
             tag: "latest"
-          - image: "ceregousa/dind"
+          - image: "msyea/github-actions-runner"
+            tag: "latest"
+          - image: "nikovirtala/amazonlinux-dind"
             tag: "latest"
     steps:
       - name: checkout
