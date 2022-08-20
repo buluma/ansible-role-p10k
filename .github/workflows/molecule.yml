@@ -75,14 +75,9 @@ jobs:
         run: molecule test
         env:
           namespace: ${{ env.docker_namepsace }}
-          image: ansible-${{ matrix.image }}
-          packer_version: ${{ matrix.packer_version }}
+          image: ${{ matrix.image }}
+          tag: ${{ matrix.config.tag }}
 
-      - name: Test Ansible role with check_mode enable
-        run: molecule check
-        env:
-          image: ansible-${{ matrix.image }}
-          zsh_plugin: ${{ matrix.terraform_version }}
   test:
     needs:
       - lint
