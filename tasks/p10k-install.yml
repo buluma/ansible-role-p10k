@@ -8,7 +8,7 @@
   when: p10k_dependencies
 
 - name: get ZSH version
-  shell: "set -o pipefail; zsh --version | cut -d ' ' -f2 | cut -c1-3"
+  ansible.builtin.shell: "set -o pipefail; zsh --version | cut -d ' ' -f2 | cut -c1-3"
   args:
     executable: /bin/bash
   check_mode: no

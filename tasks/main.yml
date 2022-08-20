@@ -2,10 +2,10 @@
 # tasks file for ansible-role-p10k
 
 - name: include OS specific variables.
-  include_vars: "{{ ansible_system }}.yml"
+  ansible.builtin.include_vars: "{{ ansible_system }}.yml"
 
 - name: include p10k prompt style variables.
-  include_vars: "{{ p10k_style[p10k_prompt_style] }}.yml"
+  ansible.builtin.include_vars: "{{ p10k_style[p10k_prompt_style] }}.yml"
 
 - name: install p10k
   include_tasks: "p10k-install.yml"
