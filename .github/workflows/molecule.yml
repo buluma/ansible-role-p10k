@@ -71,6 +71,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: check docker
+        run: docker ps
+
       - name: Test Ansible role
         run: molecule test
         env:
@@ -78,47 +81,47 @@ jobs:
           image: ${{ matrix.image }}
           tag: ${{ matrix.config.tag }}
 
-  test:
-    needs:
-      - lint
-    runs-on: ubuntu-20.04
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          - image: "amazonlinux"
-            tag: "latest"
-          - image: "enterpriselinux"
-            tag: "8"
-          - image: "debian-systemd"
-            tag: "latest"
-          - image: "debian-systemd"
-            tag: "bookworm"
-          - image: "fedora-systemd"
-            tag: "35"
-          - image: "fedora-systemd"
-            tag: "34"
-          - image: "fedora-systemd"
-            tag: "latest"
-          - image: "docker-opensuse-systemd"
-            tag: "latest"
-          - image: "docker-ubuntu-systemd"
-            tag: "latest"
-          - image: "docker-ubuntu-systemd"
-            tag: "focal"
-          - image: "docker-ubuntu-systemd"
-            tag: "bionic"
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
-        with:
-          path: "${{ github.repository }}"
-      - name: disable apparmor for mysql
-        run: sudo ln -s /etc/apparmor.d/usr.sbin.mysqld /etc/apparmor.d/disable/
-      - name: parse apparmor for mysql
-        run: sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
-      - name: molecule
-        uses: buluma/molecule-action@v5.0.1
-        with:
-          image: ${{ matrix.config.image }}
-          tag: ${{ matrix.config.tag }}
+  # test:
+  #   needs:
+  #     - lint
+  #   runs-on: ubuntu-20.04
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       config:
+  #         - image: "amazonlinux"
+  #           tag: "latest"
+  #         - image: "enterpriselinux"
+  #           tag: "8"
+  #         - image: "debian-systemd"
+  #           tag: "latest"
+  #         - image: "debian-systemd"
+  #           tag: "bookworm"
+  #         - image: "fedora-systemd"
+  #           tag: "35"
+  #         - image: "fedora-systemd"
+  #           tag: "34"
+  #         - image: "fedora-systemd"
+  #           tag: "latest"
+  #         - image: "docker-opensuse-systemd"
+  #           tag: "latest"
+  #         - image: "docker-ubuntu-systemd"
+  #           tag: "latest"
+  #         - image: "docker-ubuntu-systemd"
+  #           tag: "focal"
+  #         - image: "docker-ubuntu-systemd"
+  #           tag: "bionic"
+  #   steps:
+  #     - name: checkout
+  #       uses: actions/checkout@v3
+  #       with:
+  #         path: "${{ github.repository }}"
+  #     - name: disable apparmor for mysql
+  #       run: sudo ln -s /etc/apparmor.d/usr.sbin.mysqld /etc/apparmor.d/disable/
+  #     - name: parse apparmor for mysql
+  #       run: sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
+  #     - name: molecule
+  #       uses: buluma/molecule-action@v5.0.1
+  #       with:
+  #         image: ${{ matrix.config.image }}
+  #         tag: ${{ matrix.config.tag }}
