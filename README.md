@@ -1,14 +1,15 @@
-# [p10k](#p10k)
+# [Ansible role p10k](#p10k)
 
 Ansible role for installing powerlevel10k
 
-|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
-|------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-p10k/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-p10k/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-p10k/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-p10k)|[![quality](https://img.shields.io/ansible/quality/60075)](https://galaxy.ansible.com/buluma/p10k)|[![downloads](https://img.shields.io/ansible/role/d/60075)](https://galaxy.ansible.com/buluma/p10k)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/pulls/)|
+|GitHub|GitLab|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-p10k/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-p10k/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-p10k/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-p10k)|[![downloads](https://img.shields.io/ansible/role/d/4791)](https://galaxy.ansible.com/buluma/p10k)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
-This example is taken from `molecule/default/converge.yml` and is tested on each push, pull request and release.
+This example is taken from [`molecule/default/converge.yml`](https://github.com/buluma/ansible-role-p10k/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
+
 ```yaml
 ---
 - name: Converge
@@ -22,7 +23,8 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
         p10k_prompt_style: "{{ lookup('env', 'p10k_prompt_style') | default('rainbow', True) }}"
 ```
 
-The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
+The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-p10k/blob/master/molecule/default/prepare.yml):
+
 ```yaml
 ---
 - name: Prepare
@@ -34,10 +36,12 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
       when: ansible_pkg_mgr == "apt"
 ```
 
+Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
 
 ## [Role Variables](#role-variables)
 
-The default values for the variables are set in `defaults/main.yml`:
+The default values for the variables are set in [`defaults/main.yml`](https://github.com/buluma/ansible-role-p10k/blob/master/defaults/main.yml):
+
 ```yaml
 ---
 # defaults file for ansible-role-p10k
@@ -107,7 +111,7 @@ p10k_transient_prompt: "no"
 
 ## [Requirements](#requirements)
 
-- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-p10k/blob/main/requirements.txt).
+- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-p10k/blob/master/requirements.txt).
 
 
 ## [Context](#context)
@@ -124,19 +128,17 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|el|8|
-|fedora|all|
-|debian|all|
-|ubuntu|all|
-|opensuse|all|
+|[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|8|
+|[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|all|
+|[Debian](https://hub.docker.com/repository/docker/buluma/debian/general)|all|
+|[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|all|
+|[opensuse](https://hub.docker.com/repository/docker/buluma/opensuse/general)|all|
 
 The minimum version of Ansible required is 2.8, tests have been done to:
 
 - The previous version.
 - The current version.
 - The development version.
-
-
 
 If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-p10k/issues)
 
@@ -146,8 +148,14 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 ## [License](#license)
 
-Apache-2.0
+[Apache-2.0](https://github.com/buluma/ansible-role-p10k/blob/master/LICENSE).
 
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
+
+Please consider [sponsoring me](https://github.com/sponsors/buluma).
+
+### [Special Thanks](#special-thanks)
+
+Template inspired by [Robert de Bock](https://github.com/robertdebock)
