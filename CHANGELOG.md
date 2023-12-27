@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-p10k/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-p10k/compare/0.1.0...HEAD)
+
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#8](https://github.com/buluma/ansible-role-p10k/issues/8)
+
 ## [0.1.0](https://github.com/buluma/ansible-role-p10k/tree/0.1.0) (2022-08-20)
 
 [Full Changelog](https://github.com/buluma/ansible-role-p10k/compare/b2ee964a9e377d95c583f5500551b8d190ef2ac1...0.1.0)
