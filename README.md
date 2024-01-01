@@ -29,12 +29,12 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
+  become: yes
   gather_facts: yes
-  tasks:
-    - name: Ubuntu/Debian | refresh apt repository
-      ansible.builtin.apt:
-        update_cache: yes
-      when: ansible_pkg_mgr == "apt"
+
+  roles:
+    - role: buluma.bootstrap
+    - role: buluma.sudo
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -114,6 +114,14 @@ p10k_transient_prompt: "no"
 
 - pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-p10k/blob/master/requirements.txt).
 
+## [State of used roles](#state-of-used-roles)
+
+The following roles are used to prepare a system. You can prepare your system in another way.
+
+| Requirement | GitHub | Version |
+|-------------|--------|--------|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Ansible Molecule](https://github.com/buluma/ansible-role-bootstrap/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-bootstrap.svg)](https://github.com/shadowwalker/ansible-role-bootstrap)|
+|[buluma.sudo](https://galaxy.ansible.com/buluma/sudo)|[![Ansible Molecule](https://github.com/buluma/ansible-role-sudo/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-sudo/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-sudo.svg)](https://github.com/shadowwalker/ansible-role-sudo)|
 
 ## [Context](#context)
 

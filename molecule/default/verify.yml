@@ -2,24 +2,24 @@
 - name: Verify
   hosts: all
   tasks:
-    - name: get custom ansible role variables
+    - name: Get custom ansible role variables
       ansible.builtin.set_fact:
         zsh_plugin: "{{ lookup('env', 'zsh_plugin') | default('zsh', True) }}"
         p10k_path:
           zsh: '~/powerlevel10k'
           ohmyzsh: '~/.oh-my-zsh/custom/themes/powerlevel10k'
 
-    - name: linux | p10k config file should be present
+    - name: P10k config file should be present
       ansible.builtin.stat:
         path: ~/.p10k.zsh
       register: p10k_configfile_result
 
-    - name: linux | p10k theme file should be present
+    - name: P10k theme file should be present
       ansible.builtin.stat:
         path: "{{ p10k_path[zsh_plugin] }}"
       register: p10k_themefile_result
 
-    - name: linux | Verify commands outputs
+    - name: Verify commands outputs
       ansible.builtin.assert:
         that:
           - p10k_configfile_result.stat.exists
