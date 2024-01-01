@@ -19,7 +19,7 @@
         path: "{{ p10k_path[zsh_plugin] }}"
       register: p10k_themefile_result
 
-    - name: linux | verify commands outputs
+    - name: linux | Verify commands outputs
       ansible.builtin.assert:
         that:
           - p10k_configfile_result.stat.exists
