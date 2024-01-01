@@ -2,8 +2,7 @@
 - name: Prepare
   hosts: all
   gather_facts: yes
-  tasks:
-    - name: Ubuntu/Debian | refresh apt repository
-      ansible.builtin.apt:
-        update_cache: yes
-      when: ansible_pkg_mgr == "apt"
+
+  roles:
+    - role: buluma.bootstrap
+    - role: buluma.sudo
