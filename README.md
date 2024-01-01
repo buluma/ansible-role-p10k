@@ -29,6 +29,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
+  gather_facts: yes
   tasks:
     - name: Ubuntu/Debian | refresh apt repository
       ansible.builtin.apt:
@@ -128,9 +129,8 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|8, 9|
+|[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|8|
 |[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|all|
-|[Debian](https://hub.docker.com/repository/docker/buluma/debian/general)|all|
 |[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|all|
 |[opensuse](https://hub.docker.com/repository/docker/buluma/opensuse/general)|all|
 
