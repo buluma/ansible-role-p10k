@@ -1,6 +1,7 @@
 ---
 - name: Prepare
   hosts: all
+  gather_facts: no
   tasks:
     - name: Ubuntu/Debian | refresh apt repository
       ansible.builtin.apt:
