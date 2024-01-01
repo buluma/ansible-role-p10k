@@ -8,10 +8,13 @@
   ansible.builtin.include_vars: "{{ p10k_style[p10k_prompt_style] }}.yml"
 
 - name: Install p10k
-  include_tasks: "p10k-install.yml"
+  ansible.builtin.import_tasks:
+    file: "p10k-install.yml"
 
 - name: Install p10k recommanded fonts
-  include_tasks: "p10k-fonts.yml"
+  ansible.builtin.import_tasks:
+    file: "p10k-fonts.yml"
 
 - name: Configure p10k
-  include_tasks: "p10k-configure.yml"
+  ansible.builtin.import_tasks:
+    file: "p10k-configure.yml"
