@@ -11,7 +11,7 @@
   ansible.builtin.shell: "set -o pipefail; zsh --version | cut -d ' ' -f2 | cut -c1-3"
   args:
     executable: /bin/bash
-  check_mode: no
+  check_mode: false
   changed_when: false
   register: zsh_version
 
@@ -25,9 +25,9 @@
     repo: "{{ p10k_repository_url }}"
     dest: "{{ p10k_path[zsh_plugin] | default('~/powerlevel10k', True) }}"
     depth: '1'
-    update: no
+    update: false
     version: 'master'
-  become: yes
+  become: true
   become_user: "{{ item }}"
   with_items: "{{ p10k_users }}"
 
@@ -37,8 +37,8 @@
     regexp: "{{ p10k_zshrc_config[zsh_plugin]['regexp'] }}"
     line: "{{ p10k_zshrc_config[zsh_plugin]['line'] }}"
     mode: '0644'
-    create: yes
-  become: yes
+    create: true
+  become: true
   become_user: "{{ item }}"
   with_items: "{{ p10k_users }}"
 

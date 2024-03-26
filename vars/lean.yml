@@ -1,7 +1,7 @@
 ---
 
 frame_config:
-  'no':
+  'false':
     FIRST_PREFIX: ""
     NEWLINE_PREFIX: ""
     LAST_PREFIX: ""
@@ -52,5 +52,5 @@ flow_config:
   fluent: ' '
 
 transient_config:
-  'yes': 'always'
-  'no': 'off'
+  'true': 'always'
+  'false': 'off'

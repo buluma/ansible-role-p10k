@@ -61,7 +61,7 @@ p10k_zshrc_config:
     zsh_file: ~/.zshrc
 
 time_config:
-  no:
+  false:
     prompt: '# time'
     format: !unsafe '%D{%H:%M:%S}'
   24-hour:
@@ -126,8 +126,8 @@ flow_config:
   fluent: ' '
 
 transient_config:
-  'yes': 'always'
-  'no': 'off'
+  'true': 'always'
+  'false': 'off'
 
 prompt_style:
   lean:
@@ -139,7 +139,7 @@ prompt_style:
     color_background: '236'
 
 frame_config:
-  'no':
+  'false':
     prompt_char: "prompt_char"
     FIRST_PREFIX: ""
     NEWLINE_PREFIX: ""
