@@ -29,8 +29,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
-  become: yes
-  gather_facts: no
+  become: true
+  gather_facts: false
 
   roles:
     - role: buluma.bootstrap
@@ -64,7 +64,7 @@ zsh_plugin: zsh
 p10k_prompt_style: "lean"
 
 # Show current time
-# Valid values: no, 24-hour, 12-hour
+# Valid values: false, 24-hour, 12-hour
 p10k_prompt_time: "24-hour"
 
 # Prompt separator
@@ -89,12 +89,12 @@ p10k_prompt_connection: disconnected
 
 # Prompt connection color, only used if
 # "p10k_prompt_connection" value is "dotted" or "solid"
-# or "p10k_prompt_frame" is not "no"
+# or "p10k_prompt_frame" is not "false"
 # Valid values: lightest, light, dark, darkest, black, white, green, blue
 p10k_prompt_connection_color: "dark"
 
 # Prompt frame connection
-# Valid values: no, left, right, full
+# Valid values: false, left, right, full
 p10k_prompt_frame: left
 
 # Sparse prompt with an empty line before promp
@@ -106,8 +106,8 @@ p10k_prompt_spacing: compact
 p10k_prompt_flow: concise
 
 # Enable transient prompt
-# Valid values: yes, no
-p10k_transient_prompt: "no"
+# Valid values: true, false
+p10k_transient_prompt: "false"
 ```
 
 ## [Requirements](#requirements)
