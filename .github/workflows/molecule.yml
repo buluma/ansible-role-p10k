@@ -67,8 +67,6 @@ jobs:
           - image: "docker-molecule-images"
             tag: "lunar"
           - image: "docker-molecule-images"
-            tag: "noble"
-          - image: "docker-molecule-images"
             tag: "opensuse"
     steps:
       - name: Checkout Role
