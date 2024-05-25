@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-p10k/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-p10k/compare/24.3.31...HEAD)
+
+**Merged pull requests:**
+
+- Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#18](https://github.com/buluma/ansible-role-p10k/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [24.3.31](https://github.com/buluma/ansible-role-p10k/tree/24.3.31) (2024-03-29)
 
 [Full Changelog](https://github.com/buluma/ansible-role-p10k/compare/0.3.0...24.3.31)
@@ -15,7 +23,6 @@
 
 **Merged pull requests:**
 
-- Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#18](https://github.com/buluma/ansible-role-p10k/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/molecule-action from 6.0.0 to 6.0.1 [\#14](https://github.com/buluma/ansible-role-p10k/pull/14) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [0.2.0](https://github.com/buluma/ansible-role-p10k/tree/0.2.0) (2024-01-06)
