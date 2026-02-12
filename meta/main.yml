@@ -1,30 +1,26 @@
----
 galaxy_info:
   role_name: p10k
   author: buluma
   description: Ansible role for installing powerlevel10k
   license: Apache-2.0
   company: ShadowNet
-  min_ansible_version: "2.12"
-
+  min_ansible_version: '2.12'
   platforms:
-    - name: EL
-      versions:
-        - "8"
-    - name: Fedora
-      versions:
-        - all
-    - name: Ubuntu
-      versions:
-        - all
-    - name: opensuse
-      versions:
-        - all
-
+  - name: EL
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  - name: opensuse
+    versions:
+    - all
   galaxy_tags:
-    - zsh
-    - shell
-    - system
-    - git
-
+  - zsh
+  - shell
+  - system
+  - git
 dependencies: []

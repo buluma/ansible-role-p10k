@@ -1,10 +1,10 @@
-# Ansible role [p10k](https://galaxy.ansible.com/ui/standalone/roles/buluma/p10k/documentation)
+# [Ansible role p10k](#ansible-role-p10k)
 
 Ansible role for installing powerlevel10k
 
-|GitHub|Version|Issues|Pull Requests|Downloads|
-|------|-------|------|-------------|---------|
-|[![github](https://github.com/buluma/ansible-role-p10k/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-p10k/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/p10k)](https://galaxy.ansible.com/ui/standalone/roles/buluma/p10k/documentation)|
+|GitHub|GitLab|Downloads|Version|
+|------|------|---------|-------|
+|[![github](https://github.com/buluma/ansible-role-p10k/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-p10k/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-p10k/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-p10k)|[![downloads](https://img.shields.io/ansible/role/d/buluma/p10k)](https://galaxy.ansible.com/buluma/p10k)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-p10k.svg)](https://github.com/buluma/ansible-role-p10k/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -15,9 +15,9 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 - name: Converge
   hosts: all
   tasks:
-    - name: "Include buluma.p10k"
+    - name: "Include ansible-role-p10k"
       ansible.builtin.include_role:
-        name: "buluma.p10k"
+        name: "ansible-role-p10k"
       vars:
         zsh_plugin: "{{ lookup('env', 'zsh_plugin') | default('zsh', True) }}"
         p10k_prompt_style: "{{ lookup('env', 'p10k_prompt_style') | default('rainbow', True) }}"
@@ -118,17 +118,16 @@ p10k_transient_prompt: "false"
 
 The following roles are used to prepare a system. You can prepare your system in another way.
 
-| Requirement | GitHub | Version |
+| Requirement | GitHub | GitLab |
 |-------------|--------|--------|
-|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Ansible Molecule](https://github.com/buluma/ansible-role-bootstrap/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-bootstrap.svg)](https://github.com/shadowwalker/ansible-role-bootstrap)|
-|[buluma.sudo](https://galaxy.ansible.com/buluma/sudo)|[![Ansible Molecule](https://github.com/buluma/ansible-role-sudo/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-sudo/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-sudo.svg)](https://github.com/shadowwalker/ansible-role-sudo)|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-bootstrap)|
+|[buluma.sudo](https://galaxy.ansible.com/buluma/sudo)|[![Build Status GitHub](https://github.com/buluma/ansible-role-sudo/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-sudo/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-sudo/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-sudo)|
 
 ## [Context](#context)
 
-This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.github.io/) for further information.
+This role is part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.github.io/) for further information.
 
 Here is an overview of related roles:
-
 ![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-p10k/png/requirements.png "Dependencies")
 
 ## [Compatibility](#compatibility)
@@ -137,27 +136,24 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[EL](https://hub.docker.com/r/buluma/enterpriselinux)|8|
+|[EL](https://hub.docker.com/r/buluma/enterpriselinux)|all|
 |[Fedora](https://hub.docker.com/r/buluma/fedora)|all|
 |[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|all|
 |[opensuse](https://hub.docker.com/r/buluma/opensuse)|all|
 
-The minimum version of Ansible required is 2.12, tests have been done to:
+The minimum version of Ansible required is 2.12, tests have been done on:
 
 - The previous version.
 - The current version.
 - The development version.
 
-If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-p10k/issues)
-
-## [Changelog](#changelog)
-
-[Role History](https://github.com/buluma/ansible-role-p10k/blob/master/CHANGELOG.md)
+If you find issues, please register them on [GitHub](https://github.com/buluma/ansible-role-p10k/issues).
 
 ## [License](#license)
 
-[Apache-2.0](https://github.com/buluma/ansible-role-p10k/blob/master/LICENSE)
+[Apache-2.0](https://github.com/buluma/ansible-role-p10k/blob/master/LICENSE).
 
 ## [Author Information](#author-information)
 
-[Shadow Walker](https://buluma.github.io/)
+[buluma](https://buluma.github.io/)
+

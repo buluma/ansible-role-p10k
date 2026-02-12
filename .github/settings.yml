@@ -5,4 +5,4 @@
 repository:
   description: Ansible role for installing powerlevel10k
   homepage: https://buluma.github.io/
-  topics: zsh, shell, system, git, ansible, molecule, tox, playbook
+  topics: zsh, shell, system, git, ansible, molecule, playbook
