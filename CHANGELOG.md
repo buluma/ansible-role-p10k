@@ -4,6 +4,11 @@
 
 [Full Changelog](https://github.com/buluma/ansible-role-p10k/compare/24.3.31...HEAD)
 
+**Closed issues:**
+
+- Update action [\#7](https://github.com/buluma/ansible-role-p10k/issues/7)
+- rebuild action [\#6](https://github.com/buluma/ansible-role-p10k/issues/6)
+
 **Merged pull requests:**
 
 - Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#18](https://github.com/buluma/ansible-role-p10k/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
