@@ -48,7 +48,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # defaults file for ansible-role-p10k
 
 # Powerlevel10k Git repository url
-p10k_repository_url: 'https://github.com/romkatv/powerlevel10k.git'
+p10k_repository_url: "https://github.com/romkatv/powerlevel10k.git"
 
 # Install p10k for the following linux users
 # Default: the linux user running Ansible
