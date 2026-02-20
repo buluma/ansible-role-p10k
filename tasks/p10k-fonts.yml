@@ -3,7 +3,7 @@
   become: true
   ansible.builtin.file:
     path: "{{ fonts_path }}"
-    mode: '0755'
+    mode: "0755"
     state: directory
 
 - name: p10k-fonts | Copy powerlevel10k recommanded fonts
@@ -11,7 +11,7 @@
   ansible.builtin.copy:
     src: "fonts/{{ item }}"
     dest: "{{ fonts_path }}/{{ item }}"
-    mode: '0644'
+    mode: "0644"
   loop:
     - MesloLGS NF Bold Italic.ttf
     - MesloLGS NF Bold.ttf

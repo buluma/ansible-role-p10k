@@ -2,29 +2,29 @@
 separator_config:
   angled:
     segment:
-      left: '\uE0B0'
-      right: '\uE0B2'
+      left: "\\uE0B0"
+      right: "\\uE0B2"
     subsegment:
-      left: '\uE0B1'
-      right: '\uE0B3'
+      left: "\\uE0B1"
+      right: "\\uE0B3"
   vertical:
     segment:
-      left: '\uE0B0'
-      right: '\uE0B2'
+      left: "\\uE0B0"
+      right: "\\uE0B2"
     subsegment:
-      left: '\u2502'
-      right: '\u2502'
+      left: "\\u2502"
+      right: "\\u2502"
   slanted:
     segment:
-      left: '\uE0BC'
-      right: '\uE0BA'
+      left: "\\uE0BC"
+      right: "\\uE0BA"
     subsegment:
-      left: '\u2571'
-      right: '\u2571'
+      left: "\\u2571"
+      right: "\\u2571"
   round:
     segment:
-      left: '\uE0B4'
-      right: '\uE0B6'
+      left: "\\uE0B4"
+      right: "\\uE0B6"
     subsegment:
-      left: '\uE0B5'
-      right: '\uE0B7'
+      left: "\\uE0B5"
+      right: "\\uE0B7"
