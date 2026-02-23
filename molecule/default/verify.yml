@@ -1,27 +1,27 @@
 ---
-  - name: Verify
-    hosts: all
-    tasks:
-      - name: Get custom ansible role variables
-        ansible.builtin.set_fact:
-          zsh_plugin: "{{ lookup('env', 'zsh_plugin') | default('zsh', True) }}"
-          p10k_path:
-            zsh: '~/powerlevel10k'
-            ohmyzsh: '~/.oh-my-zsh/custom/themes/powerlevel10k'
+- name: Verify
+  hosts: all
+  tasks:
+  - name: Get custom ansible role variables
+    ansible.builtin.set_fact:
+      zsh_plugin: "{{ lookup('env', 'zsh_plugin') | default('zsh', True) }}"
+      p10k_path:
+        zsh: '~/powerlevel10k'
+        ohmyzsh: '~/.oh-my-zsh/custom/themes/powerlevel10k'
 
-      - name: P10k config file should be present
-        ansible.builtin.stat:
-          path: ~/.p10k.zsh
-        register: p10k_configfile_result
+  - name: P10k config file should be present
+    ansible.builtin.stat:
+      path: ~/.p10k.zsh
+    register: p10k_configfile_result
 
-      - name: P10k theme file should be present
-        ansible.builtin.stat:
-          path: "{{ p10k_path[zsh_plugin] }}"
-        register: p10k_themefile_result
+  - name: P10k theme file should be present
+    ansible.builtin.stat:
+      path: "{{ p10k_path[zsh_plugin] }}"
+    register: p10k_themefile_result
 
-      - name: Verify commands outputs
-        ansible.builtin.assert:
-          that:
-            - p10k_configfile_result.stat.exists
-            - p10k_themefile_result.stat.exists
-          success_msg: "All tests passed"
+  - name: Verify commands outputs
+    ansible.builtin.assert:
+      that:
+      - p10k_configfile_result.stat.exists
+      - p10k_themefile_result.stat.exists
+      success_msg: "All tests passed"
