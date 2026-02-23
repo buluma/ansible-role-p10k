@@ -12,28 +12,29 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-- name: Converge
-  hosts: all
-  tasks:
-    - name: "Include ansible-role-p10k"
-      ansible.builtin.include_role:
-        name: "ansible-role-p10k"
-      vars:
-        zsh_plugin: "{{ lookup('env', 'zsh_plugin') | default('zsh', True) }}"
-        p10k_prompt_style: "{{ lookup('env', 'p10k_prompt_style') | default('rainbow', True) }}"
+  - name: Converge
+    hosts: all
+    tasks:
+      - name: "Include ansible-role-p10k"
+        ansible.builtin.include_role:
+          name: "ansible-role-p10k"
+        vars:
+          zsh_plugin: "{{ lookup('env', 'zsh_plugin') | default('zsh', True) }}"
+          p10k_prompt_style: "{{ lookup('env', 'p10k_prompt_style') | default('rainbow',
+            True) }}"
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-p10k/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-- name: Prepare
-  hosts: all
-  become: true
-  gather_facts: false
+  - name: Prepare
+    hosts: all
+    become: true
+    gather_facts: false
 
-  roles:
-    - role: buluma.bootstrap
+    roles:
+      - role: buluma.bootstrap
     # - role: buluma.sudo
 ```
 
