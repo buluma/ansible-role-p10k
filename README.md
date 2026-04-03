@@ -17,7 +17,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   tasks:
     - name: "Include ansible-role-p10k"
       ansible.builtin.include_role:
-        name: "ansible-role-p10k"
+        name: "buluma.p10k"
       vars:
         zsh_plugin: "{{ lookup('env', 'zsh_plugin') | default('zsh', True) }}"
         p10k_prompt_style:
@@ -158,3 +158,4 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
+
